@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sudoku Solver</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous">
+    <link rel="stylesheet" href="sudoku2.css">
+</head>
+<body>
+    <!-- <div id="#middle">
+         <div class="bubbles">
+            <img src="bubble.png">
+            <img src="bubble.png">
+            <img src="bubble.png">
+            <img src="bubble.png">
+            
+            <img src="bubble.png">
+            
+            <img src="bubble.png">
+            
+            <img src="bubble.png">
+            
+
+        </div> -->
+        <h1 style="color: #ffff00;font-weight: bold;font-size:50px;">Welcome to puzzle solver</h1>
+       
+        
+<div  id="heading" style="clear: both"> 
+    
+    <h2 style="float: left;">Initial Board</h2> 
+    <h2 style="float: right;color: black;">AnswerBoard</h2>
+
+</div>
+<div id="grid" style="clear: both;">
+
+    <input class="empty borderleft bordertop" type="text" maxlength="1">
+    <input class="empty bordertop" type="text" maxlength="1">
+    <input class="empty bordertop borderright" type="text" maxlength="1">
+    <input class="empty bordertop" type="text" maxlength="1">
+    <input class="empty bordertop" type="text" maxlength="1">
+    <input class="empty bordertop borderright" type="text" maxlength="1">
+    <input class="empty bordertop" type="text" maxlength="1">
+    <input class="empty bordertop" type="text" maxlength="1">
+    <input class="empty bordertop borderright" type="text" maxlength="1">
+
+    <input class="empty borderleft" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+
+    <input class="empty borderleft borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom borderright" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom borderright" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom borderright" type="text" maxlength="1">
+
+    <input class="empty borderleft" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+
+    <input class="empty borderleft" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+
+    <input class="empty borderleft borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom borderright" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom borderright" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom borderright" type="text" maxlength="1">
+
+    <input class="empty borderleft" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+
+    <input class="empty borderleft" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty " type="text" maxlength="1">
+    <input class="empty borderright" type="text" maxlength="1">
+
+    <input class="empty borderleft borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom borderright" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom borderright" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom" type="text" maxlength="1">
+    <input class="empty borderbottom borderright" type="text" maxlength="1">
+    
+    
+</div>
+<button id="submit" >Submit</button>
+
+<div id="res">
+    <input class="emp bl bt" type="text" maxlength="1">
+    <input class="emp bt" type="text" maxlength="1">
+    <input class="emp bt br" type="text" maxlength="1">
+    <input class="emp bt" type="text" maxlength="1">
+    <input class="emp bt" type="text" maxlength="1">
+    <input class="emp bt br" type="text" maxlength="1">
+    <input class="emp bt" type="text" maxlength="1">
+    <input class="emp bt" type="text" maxlength="1">
+    <input class="emp bt br" type="text" maxlength="1">
+
+    <input class="emp bl" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+
+    <input class="emp bl bb" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb br" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb br" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb br" type="text" maxlength="1">
+
+    <input class="emp bl" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+
+    <input class="emp bl" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+
+    <input class="emp bl bb" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb br" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb br" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb br" type="text" maxlength="1">
+
+    <input class="emp bl" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+
+    <input class="emp bl" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp " type="text" maxlength="1">
+    <input class="emp br" type="text" maxlength="1">
+
+    <input class="emp bl bb" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb br" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb br" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb" type="text" maxlength="1">
+    <input class="emp bb br" type="text" maxlength="1">
+    
+    
+</div>
+<button id="reset" >Reset</button>
+<script type="text/javascript">
+
+var width = 9;
+var area = width**2;
+var blocks = [
+    0,0,0,1,1,1,2,2,2,
+    0,0,0,1,1,1,2,2,2,
+    0,0,0,1,1,1,2,2,2,
+    3,3,3,4,4,4,5,5,5,
+    3,3,3,4,4,4,5,5,5,
+    3,3,3,4,4,4,5,5,5,
+    6,6,6,7,7,7,8,8,8, 
+    6,6,6,7,7,7,8,8,8,
+    6,6,6,7,7,7,8,8,8
+    ];
+var array = [];
+var possible_array = [];
+updatePossibleArray();
+var find_possible_array = [];
+
+$(".empty").keyup(function (){
+    if(this.value.length == this.maxLength){
+        $(this).next('.empty').focus();
+    }
+});
+
+$("#submit").click(function(){
+    solution();
+});
+$("#reset").click(function(){
+    resetBoard();
+});
+function resetBoard(){
+    replaceBoard();
+   /* updateSolutionOfPossibleArray();
+    solver();
+   solution();*/
+}
+function replaceBoard(){
+    for(var i = 0; i <  area; i++){
+        document.querySelectorAll("input.emp")[i].value = '';
+        document.querySelectorAll("input.empty")[i].value = '';
+    }
+    //solution();
+    //updatePossibleArray();
+    possible_array=[];
+    array=[];
+  find_possible_array=[];
+    for(var i = 0; i < area; i++){
+        var space = [identifyRow(i),identifyColumn(i),identifyblock(i)];
+        possible_array.push(space);
+    }
+
+
+    //solver();
+    //replace();
+}
+
+function solution(){
+    var elem = document.getElementsByClassName("empty");
+    for (var i = 0; i < elem.length; ++i) {
+        array.push(parseInt(elem[i].value));
+    }
+    updateSolutionOfPossibleArray();
+    solver();
+    replace();
+}
+
+function replace(){
+    for(var i = 0; i <  area; i++){
+        document.querySelectorAll("input.emp")[i].value = array[i];
+    }
+}
+
+function solver(){
+    var find_array = [
+        0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0
+        ];
+    var find_possible_arr = 0;
+    for(var x = 0; x < find_possible_array.length; x++){
+        for(var y = 1; y < 11; y++){
+            find_possible_arr = find_possible_array[x];
+            find_array[x]++;
+            var guess = find_array[x];
+            array[find_possible_arr] = guess;
+            if(!checkForErrors()){
+                break;
+            }
+        }
+        if(find_array[x] >= 10){
+            find_array[x] = 0;
+            array[find_possible_arr] = NaN;
+            x-=2;
+        }
+    }
+}
+
+function updatePossibleArray(){
+    for(var i = 0; i < area; i++){
+        var space = [identifyRow(i),identifyColumn(i),identifyblock(i)];
+        possible_array.push(space);
+    }
+}
+
+function updateSolutionOfPossibleArray(){
+
+    for(var i = 0; i < area; i++){
+        if(Number.isNaN(array[i])){
+            find_possible_array.push(i);
+        }
+    }
+}
+
+function identifyRow(i){
+    var row = Math.floor(i/width);
+    return row;
+}
+
+function identifyColumn(i){
+    var row = i % width;
+    return row;
+}
+
+function identifyblock(i){
+    return blocks[i];
+}
+
+function checkForErrors(){
+    for(var a = 0; a < area; a++){
+        if(Number.isNaN(array[a])){
+
+        } 
+        else {
+            for(var b = 0; b < area; b++){
+                if(a !== b){
+                    if(possible_array[a][0] === possible_array[b][0] || possible_array[a][1] === possible_array[b][1] || possible_array[a][2] === possible_array[b][2]){
+                        if(array[a] === array[b]){
+                            return true;
+                           // resetBoard();
+                        }
+
+                       // resetBoard();
+                       //replaceBoard();
+                    }
+
+                }
+
+               //// resetBoard();
+            }
+        }
+    }
+    return false;
+}
+</script>
+<h4 style="float: left;">Note: Enter the numbers you needed in the perspective rows without replication</h4>
+</div>
+</body>
+</html>

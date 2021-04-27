@@ -1,0 +1,213 @@
+#grid {
+    margin: 1px auto;
+    width: 390px;
+    height: 390px;
+    float:left;
+    color:yellow;
+    margin-left: 10px;
+    margin-bottom: 10%;
+}
+#middle {
+    width:100%;
+    height:80vh;
+    
+    background-size:100% auto;
+    background-repeat:no-repeat;
+    color:white;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    transition:1s ease-in-out;
+    padding-top:20vh;
+}
+.bubbles img{
+    width: 50px;
+    animation: bubble 7s linear infinite;
+}
+.bubbles{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom:-90px;
+}
+@keyframes bubble{
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50%{
+        
+        opacity: 1;
+    }
+    70%{
+        
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-80vh);
+        opacity: 0;
+    }
+
+}
+.bubbles img:nth-child(1){
+    animation-delay: 2s;
+    width: 25px;
+}
+.bubbles img:nth-child(2){
+    animation-delay: 1s;
+     width: 15px;
+}
+.bubbles img:nth-child(3){
+    animation-delay: 3s;
+    width: 30px;
+}
+.bubbles img:nth-child(4){
+    animation-delay: 4.5s;
+     width: 10px;
+}
+.bubbles img:nth-child(5){
+    animation-delay: 5s;
+}
+.bubbles img:nth-child(6){
+    animation-delay: 6s;
+     width: 35px;
+}
+.bubbles img:nth-child(7){
+    animation-delay: 7s;
+     width: 20px;
+}
+
+#res{
+    margin: 1px auto;
+    width: 390px;
+    height: 390px;
+    float:right;
+    color:green;
+    margin-right: 10px;
+
+     margin-bottom: 10%;
+}
+#submit {
+    margin: 25px auto;
+    float: left;
+    margin-top: 20%;
+   margin-left: 50px;
+
+
+
+}
+#heading{
+    color: seashell;
+    margin-right: 7%;
+    margin-left: 7%;
+}
+#reset{
+    margin: 25px auto;
+    float:right;
+    margin-top: 20%;
+   margin-right: 50px;
+}
+.emp{
+     width: 11%;
+    height: 11%;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 1px solid lightblue;
+    float: left;
+    color: black;
+    background-color: gray;
+    font-style: bold;
+   
+
+}
+.empty{
+    width: 11%;
+    height: 11%;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 1px solid brown;
+    float: left;
+    color: blue;
+    background-color: blanchedalmond;
+    font-style: bold;
+    
+    
+}
+script{
+    background-color: white;
+    font-style: bold;
+    color: yellow;
+}
+h4{
+    color: red;
+    font-style: bold;
+    float:right;
+    bottom:1120px;
+    margin-top: -100px;
+}
+h1{
+    color: white;
+    font: cursive;
+    font-style: italic;
+    font-style: bold;
+    font-family: monospace;
+    text-align: center;
+}
+
+h3{
+    color: white;
+    font: cursive;
+    font-style: italic;
+    font-family: monospace;
+    text-align: center;
+}
+body{
+    background:linear-gradient(0deg,rgba(0,0,0,1),rgba(0,0,0,0)),url("https://cutewallpaper.org/21/water-bubble-wallpapers/4k-Bubbles-Wallpapers-High-Quality-Download-Free.jpg") center center fixed;
+    background-image: url("https://cutewallpaper.org/21/water-bubble-wallpapers/4k-Bubbles-Wallpapers-High-Quality-Download-Free.jpg");
+   
+    background-repeat: no-repeat;
+    background-size: 1366px 760px;
+
+
+
+}
+button{
+    color: black;
+    border: 2px solid black;
+    border-radius: 12px;
+   float:center;
+   font-size: 25px;
+}
+button:hover{
+    background-color: black;
+    border:2px solid white;
+    color: white;
+    border-radius: 12px;
+}
+.bordertop {
+    border-top: 5px solid brown;
+}
+.borderbottom {
+    border-bottom: 5px solid brown;
+}
+.borderleft {
+    border-left: 5px solid brown;
+}
+.borderright {
+    border-right: 5px solid brown;
+}
+
+.bt {
+    border-top: 5px solid lightblue;
+}
+.bb {
+    border-bottom: 5px solid lightblue;
+}
+.bl {
+    border-left: 5px solid lightblue;
+}
+.br {
+    border-right: 5px solid lightblue;
+}
